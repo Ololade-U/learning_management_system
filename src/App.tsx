@@ -1,13 +1,13 @@
-import Header from "./Components/Header"
-
+import Header from "./Components/Header";
+import Landing from "./Components/Landing";
 
 function App() {
-
   return (
     <div>
-      <Header/>
+      <Header />
+      <Landing />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
