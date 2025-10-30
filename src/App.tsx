@@ -1,3 +1,4 @@
+import About from "./Components/About";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Landing from "./Components/Landing";
@@ -7,6 +8,7 @@ function App() {
     <div>
       <Header />
       <Landing />
+      <About />
       <Footer />
     </div>
   );

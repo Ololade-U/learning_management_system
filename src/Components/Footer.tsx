@@ -1,6 +1,7 @@
 import "./Footer.css";
 import ALMSLogo from "../assets/Academy.png";
 
+
 const Footer = () => {
   return (
     <footer className="footer">

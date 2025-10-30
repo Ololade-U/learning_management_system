@@ -5,10 +5,52 @@
   font-style: normal;
 }
 
-
 .red-hat-display-bold {
   font-family: "Red Hat Display", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
 }
+
+#stack-line {
+  position: relative;
+  border-right: 1px solid #212121ff;
+  border-bottom: 1px solid #212121ff;
+  border-left: 1px solid #212121ff;
+}
+
+.fancy-frame {
+  /* This is crucial for the background gradient to show up as a border */
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  
+  /* You need a background color for the content area */
+  background-color: transparent; 
+
+  /* Define the simulated border colors using multiple backgrounds */
+  border-style: solid; /* Needs to be set for background-clip to work */
+  border-width: 2px; /* Needs to be set to define the thickness */
+
+  /*
+   * The background gradients are defined here:
+   * 1. The solid "border" colors for the Right, Bottom, and Left
+   * 2. The main background color for the content area
+  */
+  background-image: 
+    /* The 'border' layer (The three solid sides) */
+    linear-gradient(
+      to bottom, 
+      transparent 0%, /* Top is transparent (controlled by border-image) */
+      #212121ff 0%,  /* Right border color */
+      #b6b5b5ff 100%, /* Bottom border color */
+      #212121ff 100%  /* Left border color */
+    ),
+    /* The content background layer */
+    linear-gradient(
+      to bottom right, 
+      /* Use the actual background color of your Stack here. 
+         If your background is black: */
+      black, black 
+    );
+}
+

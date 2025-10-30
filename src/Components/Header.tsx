@@ -1,21 +1,28 @@
 import { Box, Button, HStack, Image, Text } from "@chakra-ui/react";
-import logo from "../assets/Academy.png";
-import { ColorModeButton } from "./ui/color-mode";
+import darkLogo from "../assets/Logo Dark.jpeg";
+import lightLogo from "../assets/Logo Light.jpeg";
+
+import { ColorModeButton, useColorMode } from "./ui/color-mode";
 import { IoIosMenu } from "react-icons/io";
 
 const Header = () => {
+  const { colorMode } = useColorMode();
   return (
     <Box
       pos={"fixed"}
       w={"100%"}
       h={"15vh"}
-      bg={{_dark :"rgba(0, 0, 0, .7)", _light: "rgba(255, 255, 255, .7)"}}
+      bg={{ _dark: "rgba(0, 0, 0, .7)", _light: "rgba(255, 255, 255, .7)" }}
       backdropFilter={"blur(5px)"}
       zIndex={"5"}
     >
       <HStack p={"1rem"} justifyContent={"space-between"} alignItems={"center"}>
-        <Box bg={"white"} p={".3rem"} borderRadius={".5rem"}>
-          <Image src={logo} alt="Academy Logo" w={"7rem"} />
+        <Box>
+          <Image
+            src={colorMode === "dark" ? darkLogo : lightLogo}
+            alt="Academy Logo"
+            w={"8rem"}
+          />
         </Box>
         <HStack
           gap={"1rem"}

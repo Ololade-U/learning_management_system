@@ -17,14 +17,15 @@ const Landing = () => {
       alignItems={"center"}
       pos={"relative"}
       top={"15vh"}
-      p={{mdTo2xl :"3rem", mdDown: "1rem"}}
-      pt={{mdDown : '3rem'}}
-      mdDown={{flexDirection: "column", gap: "3rem"}}
+      p={{ mdTo2xl: "3rem", mdDown: "1rem" }}
+      pt={{ mdDown: "3rem" }}
+      mdDown={{ flexDirection: "column", gap: "3rem" }}
+      mb={'4rem'}
     >
       <Stack gap={"2rem"}>
         <Heading
           className="red-hat-display-bold"
-          fontSize={{mdTo2xl : "7xl", mdDown: "5xl"}}
+          fontSize={{ mdTo2xl: "7xl", mdDown: "5xl" }}
           maxW={"15ch"}
           lineHeight={"1"}
         >
@@ -62,7 +63,7 @@ const Landing = () => {
           color={{ _light: "#E62727", _dark: "black" }}
           transitionProperty={"width, margin"}
           transitionDuration={".3s"}
-          w={{ mdTo2xl: "30%" , mdDown: "50%"}}
+          w={{ mdTo2xl: "30%", mdDown: "50%" }}
           p={"1.5rem"}
           borderRadius={"2rem"}
           fontWeight={"900"}
@@ -70,7 +71,11 @@ const Landing = () => {
           Sign Up for Free <FaArrowRightLong />
         </Button>
       </Stack>
-      <Box display={'flex'} justifyContent={'center'} w={{mdTo2xl : "40%", mdDown: "100%"}}>
+      <Box
+        display={"flex"}
+        justifyContent={"center"}
+        w={{ mdTo2xl: "40%", mdDown: "100%" }}
+      >
         <Image src={Hero} alt="Hero" h={"70vh"} />
       </Box>
     </HStack>
