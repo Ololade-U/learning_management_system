@@ -73,7 +73,7 @@ const Header = () => {
           </Text>
         </HStack>
         <HStack>
-          <Button borderRadius={"1rem"}>Members Area</Button>
+          <Button hideBelow={'md'} borderRadius={"1rem"}>Members Area</Button>
           <ColorModeButton />
         </HStack>
         <Box
