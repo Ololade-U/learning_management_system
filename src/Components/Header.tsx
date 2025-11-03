@@ -4,9 +4,12 @@ import lightLogo from "../assets/Logo_Light-removebg-preview.png";
 
 import { ColorModeButton, useColorMode } from "./ui/color-mode";
 import { IoIosMenu } from "react-icons/io";
+import useStoreQuery from "./Store";
 
 const Header = () => {
   const { colorMode } = useColorMode();
+  const setOpenNav = useStoreQuery((s) => s.setOpenNav);
+  const OpenNav = useStoreQuery((s) => s.openNav);
   return (
     <Box
       pos={"fixed"}
@@ -73,7 +76,9 @@ const Header = () => {
           </Text>
         </HStack>
         <HStack>
-          <Button hideBelow={'md'} borderRadius={"1rem"}>Members Area</Button>
+          <Button hideBelow={"md"} borderRadius={"1rem"}>
+            Members Area
+          </Button>
           <ColorModeButton />
         </HStack>
         <Box
@@ -82,8 +87,9 @@ const Header = () => {
           p={".3rem"}
           borderRadius={"50%"}
           display={{ mdDown: "block", mdTo2xl: "none" }}
+          onClick={() => (OpenNav ? setOpenNav(false) : setOpenNav(true))}
         >
-          <IoIosMenu size={"2rem"} />
+          <IoIosMenu size={"1.5rem"} />
         </Box>
       </HStack>
     </Box>

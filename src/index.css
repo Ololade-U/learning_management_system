@@ -12,4 +12,17 @@
   font-style: normal;
 }
 
+.navOpen{
+  animation-name: openNav;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-duration: .3s;  
+}
+
+@keyframes openNav {
+  100%{
+    right: 0;
+  }
+}
+
 
