@@ -14,7 +14,7 @@ const Learn = () => {
   return (
     <Box
       mb={"4rem"}
-      mt={{ mdDown: "15rem" }}
+      mt={{ mdDown: "11rem" }}
       display={"flex"}
       flexDirection={"column"}
       gap={{mdTo2xl : "6rem", mdDown : '4rem'}}

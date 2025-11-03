@@ -98,9 +98,9 @@ const Landing = () => {
       <Box
         pos={"fixed"}
         top={"15vh"}
-        right={"-55%"}
+        right={"-65%"}
         height={"85vh"}
-        w={"55%"}
+        w={"65%"}
         bg={{_dark : "rgba(0,0,0,.7)", _light : 'rgba(227, 227, 227, .8)'}}
         zIndex={"10"}
         p={"1rem"}
