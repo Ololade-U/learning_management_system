@@ -1,6 +1,6 @@
 import { Box, Button, HStack, Image, Text } from "@chakra-ui/react";
-import darkLogo from "../assets/Logo Dark.jpeg";
-import lightLogo from "../assets/Logo Light.jpeg";
+import darkLogo from "../assets/Logo_Dark-removebg-preview.png";
+import lightLogo from "../assets/Logo_Light-removebg-preview.png";
 
 import { ColorModeButton, useColorMode } from "./ui/color-mode";
 import { IoIosMenu } from "react-icons/io";

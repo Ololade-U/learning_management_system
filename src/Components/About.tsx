@@ -73,7 +73,7 @@ const About = () => {
                 color={{ _dark: "#CFCFCF", _light: "black" }}
                 textWrap={"nowrap"}
               >
-                Students thought
+                Students taught
               </Text>
             </Stack>
             <Stack

@@ -3,6 +3,7 @@ import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Landing from "./Components/Landing";
 import Learn from "./Components/Learn";
+import Trusted from "./Components/Trusted";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Landing />
       <About />
       <Learn />
+      <Trusted />
       <Footer />
     </div>
   );

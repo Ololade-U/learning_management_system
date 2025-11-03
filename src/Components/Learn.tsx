@@ -240,14 +240,14 @@ const Learn = () => {
             className="red-hat-display-bold"
             fontSize={{ mdTo2xl: "3xl", mdDown: "2xl" }}
           >
-            Built on 20+ Years of Experience
+            Built on 15+ Years of Experience
           </Heading>
           <Text
             maxW={"35ch"}
             fontSize={{mdTo2xl : "xl", mdDown : 'larger'}}
             color={{ _dark: "#c4c4c4ff", _light: "gray.500" }}
           >
-            With over two decades in the industry, We've seen it all. I'll share
+            With nearly two decades in the industry, We've seen it all. We'll share
             insights and lessons that you won't find in any textbook.
           </Text>
         </Stack>
