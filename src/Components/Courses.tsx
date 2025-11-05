@@ -168,7 +168,6 @@ const Courses = () => {
           ))}
         </SimpleGrid>
       </Stack>
-      <Footer />
     </>
   );
 };
