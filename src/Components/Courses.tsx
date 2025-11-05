@@ -1,6 +1,5 @@
 import {
   Field,
-  For,
   Heading,
   HStack,
   Input,
@@ -97,12 +96,12 @@ const Courses = () => {
   return (
     <>
       <Stack
-        p={{mdTo2xl : "0 5rem", mdDown : '0 1rem'}}
+        p={{ mdTo2xl: "0 5rem", mdDown: "0 1rem" }}
         gap={"2rem"}
         pos={"relative"}
         top={"15vh"}
-        pt={{mdTo2xl : "2.5rem", mdDown : '3rem'}}
-        mb={'7rem'}
+        pt={{ mdTo2xl: "2.5rem", mdDown: "3rem" }}
+        mb={"7rem"}
       >
         <Heading
           fontSize={{ mdTo2xl: "5xl", mdDown: "3xl" }}
@@ -125,26 +124,26 @@ const Courses = () => {
         </Heading>
 
         <HStack
-          alignItems={'flex-start'}
+          alignItems={"flex-start"}
           color={"white"}
           fontWeight={"600"}
           mt={"1.5rem"}
-          w={'100%'}
-          flexDirection={{mdDown : 'column'}}
+          w={"100%"}
+          flexDirection={{ mdDown: "column" }}
         >
-          <Field.Root w={{mdTo2xl :"25%", mdDown : '100%'}}>
+          <Field.Root w={{ mdTo2xl: "25%", mdDown: "100%" }}>
             <Input
               name="storeName"
               placeholder="Search"
               p={"0 .5rem"}
-              bg={"#1C1C1C"}
+              bg={{ _dark: "#1C1C1C", _light: "#e3e3e3" }}
             />
           </Field.Root>
           <Field.Root
-            w={{mdTo2xl : "20%", mdDown: '40%'}}
-            bg={"#1C1C1C"}
-            color={"white"}
+            w={{ mdTo2xl: "20%", mdDown: "40%" }}
+            color={{ _dark: "white", _light: "black" }}
             fontWeight={"600"}
+            bg={{ _dark: "#1C1C1C", _light: "#e3e3e3" }}
           >
             <NativeSelect.Root>
               <NativeSelect.Field
@@ -152,23 +151,18 @@ const Courses = () => {
                 placeholder="All Courses"
                 p={"0 .5rem"}
               >
-                <For each={["Lagos island", "Ikorodu", "Epe", "Surulere"]}>
-                  {(item) => (
-                    <option key={item} value={item}>
-                      {item}
-                    </option>
-                  )}
-                </For>
+                {Courses.map((product) => (
+                  <option key={product.id} value={product.name}>
+                    {product.name}
+                  </option>
+                ))}
               </NativeSelect.Field>
               <NativeSelect.Indicator />
             </NativeSelect.Root>
           </Field.Root>
         </HStack>
 
-        <SimpleGrid
-          columns={{ sm: 1, md: 2, lg: 3, xlTo2xl: 3 }}
-          gap={"1rem"}
-        >
+        <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xlTo2xl: 3 }} gap={"1rem"}>
           {Courses.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

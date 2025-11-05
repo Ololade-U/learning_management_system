@@ -2,13 +2,19 @@ import { create } from "zustand";
 
 interface StoreQuery{
     openNav : boolean;
+    activePage : string;
     setOpenNav : (value  : boolean)=> void
+    setActivePage : (value  : string)=> void
 }
 
 const useStoreQuery = create<StoreQuery>((set)=> ({
     openNav : false,
-    setOpenNav : (value : boolean)=> set(()=> ({
+    activePage : '',
+    setOpenNav : (value)=> set(()=> ({
         openNav : value
+    })),
+    setActivePage : (value) => set(()=> ({
+        activePage : value
     }))
 }))
 

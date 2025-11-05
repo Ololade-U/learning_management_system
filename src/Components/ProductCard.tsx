@@ -21,12 +21,12 @@ const ProductCard = ({ product }: Props) => {
         <Card.Body p={"1rem"}>
           <Stack>
             <HStack justifyContent={"space-between"}>
-              <Heading fontWeight={"700"} fontSize={"xl"}>
+              <Heading fontWeight={"700"} fontSize={{mdTo2xl : "xl", mdDown : 'lg'}}>
                 {product.name}
               </Heading>
               <Text
                 color={{ _dark: "#c4c4c4ff", _light: "gray.500" }}
-                fontSize={"md"}
+                fontSize={{mdTo2xl : "md", mdDown : 'sm'}}
                 p={".2rem .7rem"}
                 borderRadius={".5rem"}
                 bg={"#1A1919"}

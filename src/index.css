@@ -19,6 +19,19 @@
   animation-duration: .3s;  
 }
 
+.navClose{
+  animation-name: closeNav;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-duration: .3s;
+}
+
+@keyframes closeNav {
+  100%{
+    right: -65%;
+  }
+}
+
 @keyframes openNav {
   100%{
     right: 0;
