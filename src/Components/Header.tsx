@@ -1,4 +1,4 @@
-import { Box, Button, HStack, Image, Text } from "@chakra-ui/react";
+import { Box, Button, HStack, Image, Stack, Text } from "@chakra-ui/react";
 import darkLogo from "../assets/Logo_Dark-removebg-preview.png";
 import lightLogo from "../assets/Logo_Light-removebg-preview.png";
 
@@ -9,8 +9,10 @@ import useStoreQuery from "./Store";
 const Header = () => {
   const { colorMode } = useColorMode();
   const setOpenNav = useStoreQuery((s) => s.setOpenNav);
+  const openNav = useStoreQuery((s) => s.openNav);
   const OpenNav = useStoreQuery((s) => s.openNav);
   return (
+    <>
     <Box
       pos={"fixed"}
       w={"100%"}
@@ -93,6 +95,100 @@ const Header = () => {
         </Box>
       </HStack>
     </Box>
+    <Box
+        pos={"fixed"}
+        top={"15vh"}
+        right={"0"}
+        height={"85vh"}
+        w={"100%"}
+        bg={"rgba(0,0,0,.3)"}
+        zIndex={"5"}
+        backdropFilter={"blur(5px)"}
+        display={openNav ? "block" : "none"}
+        onClick={() => setOpenNav(false)}
+      ></Box>
+
+      <Box
+        pos={"fixed"}
+        top={"15vh"}
+        right={"-65%"}
+        height={"85vh"}
+        w={"65%"}
+        bg={{_dark : "rgba(0,0,0,.7)", _light : 'rgba(227, 227, 227, .8)'}}
+        zIndex={"10"}
+        p={"1rem"}
+        className={openNav ? "navOpen" : ""}
+      >
+        <Stack gap={"1.5rem"}>
+          <Text
+            cursor={"pointer"}
+            fontSize={"xl"}
+            fontWeight={'700'}
+            transitionProperty={"color"}
+            transitionDuration={"slow"}
+            _hover={{
+              transform: "Scale(1.02)",
+              borderBottom: "1px solid #b6b6b6ff",
+            }}
+          >
+            Courses
+          </Text>
+          <Text
+            cursor={"pointer"}
+            transitionProperty={"color"}
+            transitionDuration={"slow"}
+            fontWeight={'700'}
+            _hover={{
+              transform: "Scale(1.02)",
+              borderBottom: "1px solid #b6b6b6ff",
+            }}
+            fontSize={"xl"}
+          >
+            Learning Paths
+          </Text>
+          <Text
+            cursor={"pointer"}
+            transitionProperty={"color"}
+            transitionDuration={"slow"}
+            fontWeight={'700'}
+            fontSize={"xl"}
+            _hover={{
+              transform: "Scale(1.02)",
+              borderBottom: "1px solid #b6b6b6ff",
+            }}
+          >
+            Lifetime Access
+          </Text>
+          <Text
+            cursor={"pointer"}
+            transitionProperty={"color"}
+            transitionDuration={"slow"}
+            fontWeight={'700'}
+            fontSize={"xl"}
+            _hover={{
+              transform: "Scale(1.02)",
+              borderBottom: "1px solid #b6b6b6ff",
+            }}
+          >
+            Forum
+          </Text>
+          <Text
+            cursor={"pointer"}
+            transitionProperty={"color"}
+            transitionDuration={"slow"}
+            fontWeight={'700'}
+            _hover={{
+              transform: "Scale(1.02)",
+              borderBottom: "1px solid #b6b6b6ff",
+            }}
+            fontSize={"xl"}
+          >
+            Contact
+          </Text>
+          <Button borderRadius={"1rem"}>Members Area</Button>
+        </Stack>
+      </Box>
+      </>
   );
 };
 

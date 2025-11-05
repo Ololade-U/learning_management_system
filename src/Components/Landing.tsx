@@ -9,11 +9,8 @@ import {
 } from "@chakra-ui/react";
 import Hero from "../assets/Hero-bg.png";
 import { FaArrowRightLong } from "react-icons/fa6";
-import useStoreQuery from "./Store";
 
 const Landing = () => {
-  const setOpenNav = useStoreQuery((s) => s.setOpenNav);
-  const openNav = useStoreQuery((s) => s.openNav);
   return (
     <HStack
       justifyContent={"space-between"}
@@ -82,99 +79,7 @@ const Landing = () => {
         <Image src={Hero} alt="Hero" h={"70vh"} />
       </Box>
 
-      <Box
-        pos={"fixed"}
-        top={"15vh"}
-        right={"0"}
-        height={"85vh"}
-        w={"100%"}
-        bg={"rgba(0,0,0,.3)"}
-        zIndex={"5"}
-        backdropFilter={"blur(5px)"}
-        display={openNav ? "block" : "none"}
-        onClick={() => setOpenNav(false)}
-      ></Box>
-
-      <Box
-        pos={"fixed"}
-        top={"15vh"}
-        right={"-65%"}
-        height={"85vh"}
-        w={"65%"}
-        bg={{_dark : "rgba(0,0,0,.7)", _light : 'rgba(227, 227, 227, .8)'}}
-        zIndex={"10"}
-        p={"1rem"}
-        className={openNav ? "navOpen" : ""}
-      >
-        <Stack gap={"1.5rem"}>
-          <Text
-            cursor={"pointer"}
-            fontSize={"xl"}
-            fontWeight={'700'}
-            transitionProperty={"color"}
-            transitionDuration={"slow"}
-            _hover={{
-              transform: "Scale(1.02)",
-              borderBottom: "1px solid #b6b6b6ff",
-            }}
-          >
-            Courses
-          </Text>
-          <Text
-            cursor={"pointer"}
-            transitionProperty={"color"}
-            transitionDuration={"slow"}
-            fontWeight={'700'}
-            _hover={{
-              transform: "Scale(1.02)",
-              borderBottom: "1px solid #b6b6b6ff",
-            }}
-            fontSize={"xl"}
-          >
-            Learning Paths
-          </Text>
-          <Text
-            cursor={"pointer"}
-            transitionProperty={"color"}
-            transitionDuration={"slow"}
-            fontWeight={'700'}
-            fontSize={"xl"}
-            _hover={{
-              transform: "Scale(1.02)",
-              borderBottom: "1px solid #b6b6b6ff",
-            }}
-          >
-            Lifetime Access
-          </Text>
-          <Text
-            cursor={"pointer"}
-            transitionProperty={"color"}
-            transitionDuration={"slow"}
-            fontWeight={'700'}
-            fontSize={"xl"}
-            _hover={{
-              transform: "Scale(1.02)",
-              borderBottom: "1px solid #b6b6b6ff",
-            }}
-          >
-            Forum
-          </Text>
-          <Text
-            cursor={"pointer"}
-            transitionProperty={"color"}
-            transitionDuration={"slow"}
-            fontWeight={'700'}
-            _hover={{
-              transform: "Scale(1.02)",
-              borderBottom: "1px solid #b6b6b6ff",
-            }}
-            fontSize={"xl"}
-          >
-            Contact
-          </Text>
-          <Button borderRadius={"1rem"}>Members Area</Button>
-        </Stack>
-      </Box>
+      
     </HStack>
   );
 };
