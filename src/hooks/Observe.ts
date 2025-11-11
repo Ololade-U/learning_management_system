@@ -11,7 +11,7 @@ export const useObserve = ()=>{
             });
           },
           {
-            threshold: 10, // When 0% of the target is visible
+            threshold: .2, // When 0% of the target is visible
           }
         );
     
