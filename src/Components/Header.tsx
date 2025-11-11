@@ -1,7 +1,6 @@
 import { Box, Button, HStack, Image, Stack, Text } from "@chakra-ui/react";
 import darkLogo from "../assets/Logo_Dark-removebg-preview.png";
 import lightLogo from "../assets/Logo_Light-removebg-preview.png";
-
 import { ColorModeButton, useColorMode } from "./ui/color-mode";
 import { IoIosMenu } from "react-icons/io";
 import useStoreQuery from "./Store";
@@ -45,22 +44,22 @@ const Header = () => {
             fontWeight={"500"}
             mdDown={{ display: "none" }}
           >
-            <Link to={"/courses"}>
-              <Text
-                cursor={"pointer"}
-                transitionProperty={"color"}
-                transitionDuration={"slow"}
-                _hover={{ _dark: { color: "white" } }}
-                onClick={() => setActivePage("courses")}
-                color={{
-                  _dark: activePage === "courses" ? "white" : "",
-                  _light: activePage === "courses" ? "red" : "",
-                }}
-                fontWeight={'700'}
-              >
-                Courses
-              </Text>
-            </Link>
+              <Link to={"/courses"}>
+                <Text
+                  cursor={"pointer"}
+                  transitionProperty={"color"}
+                  transitionDuration={"slow"}
+                  _hover={{ _dark: { color: "white" } }}
+                  onClick={() => setActivePage("courses")}
+                  color={{
+                    _dark: activePage === "courses" ? "white" : "",
+                    _light: activePage === "courses" ? "red" : "",
+                  }}
+                  fontWeight={"700"}
+                >
+                  Courses
+                </Text>
+              </Link>
             <Link to={"learning-path"}>
               <Text
                 cursor={"pointer"}
@@ -72,7 +71,7 @@ const Header = () => {
                   _dark: activePage === "learning-path" ? "white" : "",
                   _light: activePage === "learning-path" ? "red" : "",
                 }}
-                fontWeight={'700'}
+                fontWeight={"700"}
               >
                 Learning Paths
               </Text>
@@ -86,7 +85,7 @@ const Header = () => {
                 _dark: activePage === "subscription" ? "white" : "",
                 _light: activePage === "subscription" ? "red" : "",
               }}
-              fontWeight={'700'}
+              fontWeight={"700"}
             >
               Subscription
             </Text>
@@ -99,7 +98,7 @@ const Header = () => {
                 _dark: activePage === "forum" ? "white" : "",
                 _light: activePage === "forum" ? "red" : "",
               }}
-              fontWeight={'700'}
+              fontWeight={"700"}
             >
               Forum
             </Text>
@@ -114,7 +113,7 @@ const Header = () => {
                   _dark: activePage === "contact" ? "white" : "",
                   _light: activePage === "contact" ? "red" : "",
                 }}
-                fontWeight={'700'}
+                fontWeight={"700"}
               >
                 Contact
               </Text>
