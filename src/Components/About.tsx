@@ -1,9 +1,14 @@
+import { useObserve } from "../hooks/Observe";
 import { Box, Heading, HStack, Separator, Stack, Text } from "@chakra-ui/react";
 
 const About = () => {
+  const { componentRef, isInView } = useObserve();
   return (
     <>
       <Box
+        ref={componentRef}
+        pos={"relative"}
+        top={"15vh"}
         display={"flex"}
         flexDirection={"column"}
         alignItems={"center"}
@@ -14,6 +19,11 @@ const About = () => {
         bg={{ _light: "#ffffffff" }}
         mb={"2rem"}
         px={{ mdDown: "1rem" }}
+        data-state={isInView ? "open" : "close"}
+        _open={{
+          animation: "up 1s ease-out",
+          animationFillMode: "forwards",
+        }}
       >
         <Heading
           textAlign={"center"}
@@ -28,6 +38,15 @@ const About = () => {
           mb={"2rem"}
           textAlign={"center"}
           maxW={{ mdTo2xl: "80ch", mdDown: "100ch" }}
+          pos={'relative'}
+          top={'4vh'}
+          data-state={isInView ? "open" : "close"}
+          opacity={0}
+          _open={{
+            animation: "appear 1s linear",
+            animationDelay: ".3s",
+            animationFillMode: "forwards",
+          }}
         >
           Arravo Academy is dedicated to delivering world-class digital and
           business education, equipping young people with the skills needed for

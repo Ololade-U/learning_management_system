@@ -6,7 +6,7 @@ const Trusted = () => {
       <Stack gap={"1.5rem"} alignItems={"center"}>
         <Heading
           fontSize={{ mdTo2xl: "2xl", mdDown: "xl" }}
-          backgroundImage={"linear-gradient(to right, #c50404ff, #ffffff)"}
+          backgroundImage={"linear-gradient(to right, #c50404ff, #000)"}
           backgroundClip={"text"}
           textAlign={"center"}
           className="red-hat-display-bold"

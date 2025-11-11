@@ -11,7 +11,6 @@ const Hero = () => {
       <About />
       <Learn />
       <Trusted />
-      <Footer />
     </>
   );
 };

@@ -9,15 +9,25 @@ import { FaClock } from "react-icons/fa6";
 import { TiSpanner } from "react-icons/ti";
 import { TfiWorld } from "react-icons/tfi";
 import { FaUsers } from "react-icons/fa";
+import { useObserve } from "../hooks/Observe";
 
 const Learn = () => {
+  const { componentRef, isInView } = useObserve();
   return (
     <Box
+      ref={componentRef}
+      pos={"relative"}
+      top={"15vh"}
       mb={"4rem"}
       mt={{ mdDown: "11rem" }}
       display={"flex"}
       flexDirection={"column"}
-      gap={{mdTo2xl : "6rem", mdDown : '4rem'}}
+      gap={{ mdTo2xl: "6rem", mdDown: "4rem" }}
+      data-state={isInView ? "open" : "close"}
+      _open={{
+        animation: "up 1s ease-out",
+        animationFillMode: "forwards",
+      }}
     >
       <Stack gap={"1.5rem"}>
         <Heading
@@ -38,10 +48,18 @@ const Learn = () => {
         </Heading>
       </Stack>
       <HStack
+        ref={componentRef}
         justifyContent={"center"}
         gap={"7rem"}
         flexDirection={{ mdDown: "column" }}
         px={{ mdDown: "2rem" }}
+        pos={"relative"}
+        top={"5vh"}
+        data-state={isInView ? "open" : "close"}
+        _open={{
+          animation: "up 1s ease-out",
+          animationFillMode: "forwards",
+        }}
       >
         <Stack gap={"1rem"}>
           <Box
@@ -58,7 +76,7 @@ const Learn = () => {
           <Text
             backgroundImage={"linear-gradient(to right, #c50404ff, #e3e3e3)"}
             backgroundClip={"text"}
-            fontSize={{mdTo2xl : "xl", mdDown : 'larger'}}
+            fontSize={{ mdTo2xl: "xl", mdDown: "larger" }}
             className="red-hat-display-bold"
           >
             A clear path to master coding
@@ -71,7 +89,7 @@ const Learn = () => {
           </Heading>
           <Text
             maxW={"35ch"}
-            fontSize={{mdTo2xl : "xl", mdDown : 'larger'}}
+            fontSize={{ mdTo2xl: "xl", mdDown: "larger" }}
             color={{ _dark: "#c4c4c4ff", _light: "gray.500" }}
           >
             No more jumping between random YouTube tutorials. Follow a clear,
@@ -81,10 +99,18 @@ const Learn = () => {
         <Image src={structure} h={{ mdTo2xl: "20rem", mdDown: "10rem" }} />
       </HStack>
       <HStack
+        ref={componentRef}
         justifyContent={"center"}
         gap={"7rem"}
         flexDirection={{ mdDown: "column-reverse" }}
         px={{ mdDown: "2rem" }}
+        pos={"relative"}
+        top={"5vh"}
+        data-state={isInView ? "open" : "close"}
+        _open={{
+          animation: "up 1s ease-out",
+          animationFillMode: "forwards",
+        }}
       >
         <Image src={straight} h={{ mdTo2xl: "20rem", mdDown: "10rem" }} />
         <Stack gap={"1rem"}>
@@ -102,7 +128,7 @@ const Learn = () => {
           <Text
             backgroundImage={"linear-gradient(to right, #c50404ff, #e3e3e3)"}
             backgroundClip={"text"}
-            fontSize={{mdTo2xl : "xl", mdDown : 'larger'}}
+            fontSize={{ mdTo2xl: "xl", mdDown: "larger" }}
             className="red-hat-display-bold"
           >
             Straightforward and to the point
@@ -115,7 +141,7 @@ const Learn = () => {
           </Heading>
           <Text
             maxW={"35ch"}
-            fontSize={{mdTo2xl : "xl", mdDown : 'larger'}}
+            fontSize={{ mdTo2xl: "xl", mdDown: "larger" }}
             color={{ _dark: "#c4c4c4ff", _light: "gray.500" }}
           >
             Each lesson is focused and fluff-free, so you can make real
@@ -125,10 +151,18 @@ const Learn = () => {
         </Stack>
       </HStack>
       <HStack
+        ref={componentRef}
         justifyContent={"center"}
         gap={"7rem"}
         flexDirection={{ mdDown: "column" }}
         px={{ mdDown: "2rem" }}
+        pos={"relative"}
+        top={"5vh"}
+        data-state={isInView ? "open" : "close"}
+        _open={{
+          animation: "up 1s ease-out",
+          animationFillMode: "forwards",
+        }}
       >
         <Stack gap={"1rem"}>
           <Box
@@ -145,7 +179,7 @@ const Learn = () => {
           <Text
             backgroundImage={"linear-gradient(to right, #c50404ff, #e3e3e3)"}
             backgroundClip={"text"}
-            fontSize={{mdTo2xl : "xl", mdDown : 'larger'}}
+            fontSize={{ mdTo2xl: "xl", mdDown: "larger" }}
             className="red-hat-display-bold"
           >
             Deep understanding, not just shortcuts
@@ -158,7 +192,7 @@ const Learn = () => {
           </Heading>
           <Text
             maxW={"35ch"}
-            fontSize={{mdTo2xl : "xl", mdDown : 'larger'}}
+            fontSize={{ mdTo2xl: "xl", mdDown: "larger" }}
             color={{ _dark: "#c4c4c4ff", _light: "gray.500" }}
           >
             We go beyond the “what” and show you the “why” and “how” behind
@@ -168,10 +202,18 @@ const Learn = () => {
         <Image src={deep} h={{ mdTo2xl: "20rem", mdDown: "10rem" }} />
       </HStack>
       <HStack
+        ref={componentRef}
         justifyContent={"center"}
         gap={"7rem"}
         flexDirection={{ mdDown: "column-reverse" }}
         px={{ mdDown: "2rem" }}
+        pos={"relative"}
+        top={"5vh"}
+        data-state={isInView ? "open" : "close"}
+        _open={{
+          animation: "up 1s ease-out",
+          animationFillMode: "forwards",
+        }}
       >
         <Image src={real} h={{ mdTo2xl: "20rem", mdDown: "10rem" }} />
         <Stack gap={"1rem"}>
@@ -189,7 +231,7 @@ const Learn = () => {
           <Text
             backgroundImage={"linear-gradient(to right, #c50404ff, #e3e3e3)"}
             backgroundClip={"text"}
-            fontSize={{mdTo2xl : "xl", mdDown : 'larger'}}
+            fontSize={{ mdTo2xl: "xl", mdDown: "larger" }}
             className="red-hat-display-bold"
           >
             Get ready for real-world work
@@ -202,7 +244,7 @@ const Learn = () => {
           </Heading>
           <Text
             maxW={"35ch"}
-            fontSize={{mdTo2xl : "xl", mdDown : 'larger'}}
+            fontSize={{ mdTo2xl: "xl", mdDown: "larger" }}
             color={{ _dark: "#c4c4c4ff", _light: "gray.500" }}
           >
             We’ll build real-world projects together, giving you the confidence
@@ -211,10 +253,18 @@ const Learn = () => {
         </Stack>
       </HStack>
       <HStack
+        ref={componentRef}
         justifyContent={"center"}
         gap={"7rem"}
         flexDirection={{ mdDown: "column" }}
         px={{ mdDown: "2rem" }}
+        pos={"relative"}
+        top={"5vh"}
+        data-state={isInView ? "open" : "close"}
+        _open={{
+          animation: "up 1s ease-out",
+          animationFillMode: "forwards",
+        }}
       >
         <Stack gap={"1rem"} ml={{ mdTo2xl: "2rem" }}>
           <Box
@@ -231,7 +281,7 @@ const Learn = () => {
           <Text
             backgroundImage={"linear-gradient(to right, #c50404ff, #e3e3e3)"}
             backgroundClip={"text"}
-            fontSize={{mdTo2xl : "xl", mdDown : 'larger'}}
+            fontSize={{ mdTo2xl: "xl", mdDown: "larger" }}
             className="red-hat-display-bold"
           >
             Decades of coding, shared with you
@@ -244,11 +294,11 @@ const Learn = () => {
           </Heading>
           <Text
             maxW={"35ch"}
-            fontSize={{mdTo2xl : "xl", mdDown : 'larger'}}
+            fontSize={{ mdTo2xl: "xl", mdDown: "larger" }}
             color={{ _dark: "#c4c4c4ff", _light: "gray.500" }}
           >
-            With nearly two decades in the industry, We've seen it all. We'll share
-            insights and lessons that you won't find in any textbook.
+            With nearly two decades in the industry, We've seen it all. We'll
+            share insights and lessons that you won't find in any textbook.
           </Text>
         </Stack>
         <Image src={experience} h={{ mdTo2xl: "20rem", mdDown: "10rem" }} />

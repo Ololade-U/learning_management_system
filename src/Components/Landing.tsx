@@ -9,18 +9,26 @@ import {
 } from "@chakra-ui/react";
 import Hero from "../assets/Hero-bg.png";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { useObserve } from "../hooks/Observe";
 
 const Landing = () => {
+  const { componentRef, isInView } = useObserve();
   return (
     <HStack
+      ref={componentRef}
       justifyContent={"space-between"}
       alignItems={"center"}
       pos={"relative"}
-      top={"15vh"}
+      top={"25vh"}
       p={{ mdTo2xl: "3rem", mdDown: "1rem" }}
       pt={{ mdDown: "3rem" }}
       mdDown={{ flexDirection: "column", gap: "3rem" }}
       mb={"4rem"}
+      data-state={isInView ? "open" : "close"}
+      _open={{
+        animation: "landingup 1s ease-out",
+        animationFillMode: "forwards",
+      }}
     >
       <Stack gap={"2rem"}>
         <Heading
@@ -78,8 +86,6 @@ const Landing = () => {
       >
         <Image src={Hero} alt="Hero" h={"70vh"} />
       </Box>
-
-      
     </HStack>
   );
 };

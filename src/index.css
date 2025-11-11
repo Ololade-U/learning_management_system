@@ -12,30 +12,47 @@
   font-style: normal;
 }
 
-.navOpen{
+.navOpen {
   animation-name: openNav;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
-  animation-duration: .3s;  
+  animation-duration: 0.3s;
 }
 
-.navClose{
+.navClose {
   animation-name: closeNav;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
-  animation-duration: .3s;
+  animation-duration: 0.3s;
 }
 
 @keyframes closeNav {
-  100%{
+  100% {
     right: -65%;
   }
 }
 
 @keyframes openNav {
-  100%{
+  100% {
     right: 0;
   }
 }
 
+@keyframes up {
+  100% {
+    top: 0;
+  }
+}
 
+@keyframes landingup {
+  100% {
+    top: 15vh;
+  }
+}
+@keyframes appear {
+  100% {
+    top: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+}

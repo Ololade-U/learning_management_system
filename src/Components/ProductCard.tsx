@@ -29,7 +29,7 @@ const ProductCard = ({ product }: Props) => {
                 fontSize={{mdTo2xl : "md", mdDown : 'sm'}}
                 p={".2rem .7rem"}
                 borderRadius={".5rem"}
-                bg={"#1A1919"}
+                bg={{_dark  : "#1A1919", _light : '#e3e3e3'}}
                 fontWeight={'700'}
               >
                 {product.duration}

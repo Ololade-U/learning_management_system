@@ -5,6 +5,7 @@ import fundamental from "../assets/Fundamentals.svg";
 import mobile from "../assets/Mobile dev.svg";
 import { Stack, Heading, SimpleGrid } from "@chakra-ui/react";
 import PathCard from "./PathCard";
+import { useObserve } from "../hooks/Observe";
 
 const LearningPath = () => {
   const Path = [
@@ -13,7 +14,7 @@ const LearningPath = () => {
       name: "Fundamentals",
       description:
         "Essential courses that anyone pursuing a career as a professional software engineer should take. Data structures, algorithms, design patterns, and more!",
-      img: fundamental, 
+      img: fundamental,
     },
     {
       id: 2,
@@ -44,15 +45,22 @@ const LearningPath = () => {
       img: game,
     },
   ];
+  const { componentRef, isInView } = useObserve();
   return (
     <>
       <Stack
+        ref={componentRef}
         p={{ mdTo2xl: "0 5rem", mdDown: "0 1rem" }}
         gap={"2rem"}
         pos={"relative"}
-        top={"15vh"}
+        top={"25vh"}
         pt={{ mdTo2xl: "2.5rem", mdDown: "3rem" }}
         mb={"7rem"}
+        data-state={isInView ? "open" : "close"}
+        _open={{
+          animation: "landingup 1s ease-out",
+          animationFillMode: "forwards",
+        }}
       >
         <Heading
           fontSize={{ mdTo2xl: "5xl", mdDown: "3xl" }}

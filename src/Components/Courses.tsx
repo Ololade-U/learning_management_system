@@ -16,7 +16,7 @@ import html from "../assets/Html.webp";
 import git from "../assets/Git.webp";
 import django from "../assets/Django.webp";
 import ProductCard from "./ProductCard";
-import Footer from "./Footer";
+import { useObserve } from "../hooks/Observe";
 
 const Courses = () => {
   const Courses = [
@@ -93,15 +93,22 @@ const Courses = () => {
       img: django,
     },
   ];
+  const { componentRef, isInView } = useObserve();
   return (
     <>
       <Stack
+        ref={componentRef}
         p={{ mdTo2xl: "0 5rem", mdDown: "0 1rem" }}
         gap={"2rem"}
         pos={"relative"}
-        top={"15vh"}
+        top={"25vh"}
         pt={{ mdTo2xl: "2.5rem", mdDown: "3rem" }}
         mb={"7rem"}
+        data-state={isInView ? "open" : "close"}
+        _open={{
+          animation: "landingup 1s ease-out",
+          animationFillMode: "forwards",
+        }}
       >
         <Heading
           fontSize={{ mdTo2xl: "5xl", mdDown: "3xl" }}

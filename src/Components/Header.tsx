@@ -52,7 +52,11 @@ const Header = () => {
                 transitionDuration={"slow"}
                 _hover={{ _dark: { color: "white" } }}
                 onClick={() => setActivePage("courses")}
-                color={activePage === "courses" ? "white" : ""}
+                color={{
+                  _dark: activePage === "courses" ? "white" : "",
+                  _light: activePage === "courses" ? "red" : "",
+                }}
+                fontWeight={'700'}
               >
                 Courses
               </Text>
@@ -64,7 +68,11 @@ const Header = () => {
                 transitionDuration={"slow"}
                 _hover={{ _dark: { color: "white" } }}
                 onClick={() => setActivePage("learning-path")}
-                color={activePage === "learning-path" ? "white" : ""}
+                color={{
+                  _dark: activePage === "learning-path" ? "white" : "",
+                  _light: activePage === "learning-path" ? "red" : "",
+                }}
+                fontWeight={'700'}
               >
                 Learning Paths
               </Text>
@@ -74,6 +82,11 @@ const Header = () => {
               transitionProperty={"color"}
               transitionDuration={"slow"}
               _hover={{ _dark: { color: "white" } }}
+              color={{
+                _dark: activePage === "subscription" ? "white" : "",
+                _light: activePage === "subscription" ? "red" : "",
+              }}
+              fontWeight={'700'}
             >
               Subscription
             </Text>
@@ -82,17 +95,30 @@ const Header = () => {
               transitionProperty={"color"}
               transitionDuration={"slow"}
               _hover={{ _dark: { color: "white" } }}
+              color={{
+                _dark: activePage === "forum" ? "white" : "",
+                _light: activePage === "forum" ? "red" : "",
+              }}
+              fontWeight={'700'}
             >
               Forum
             </Text>
-            <Text
-              cursor={"pointer"}
-              transitionProperty={"color"}
-              transitionDuration={"slow"}
-              _hover={{ _dark: { color: "white" } }}
-            >
-              Contact
-            </Text>
+            <Link to={"/contact"}>
+              <Text
+                cursor={"pointer"}
+                transitionProperty={"color"}
+                transitionDuration={"slow"}
+                _hover={{ _dark: { color: "white" } }}
+                onClick={() => setActivePage("contact")}
+                color={{
+                  _dark: activePage === "contact" ? "white" : "",
+                  _light: activePage === "contact" ? "red" : "",
+                }}
+                fontWeight={'700'}
+              >
+                Contact
+              </Text>
+            </Link>
           </HStack>
           <HStack>
             <Button hideBelow={"md"} borderRadius={"1rem"}>
@@ -148,7 +174,7 @@ const Header = () => {
                 transform: "Scale(1.02)",
                 borderBottom: "1px solid #b6b6b6ff",
               }}
-              onClick={()=> setOpenNav(false)}
+              onClick={() => setOpenNav(false)}
             >
               Courses
             </Text>
@@ -164,7 +190,7 @@ const Header = () => {
                 borderBottom: "1px solid #b6b6b6ff",
               }}
               fontSize={"xl"}
-              onClick={()=> setOpenNav(false)}
+              onClick={() => setOpenNav(false)}
             >
               Learning Paths
             </Text>
