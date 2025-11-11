@@ -17,7 +17,7 @@ const Learn = () => {
     <Box
       ref={componentRef}
       pos={"relative"}
-      top={"15vh"}
+      top={"5vh"}
       mb={"4rem"}
       mt={{ mdDown: "11rem" }}
       display={"flex"}
